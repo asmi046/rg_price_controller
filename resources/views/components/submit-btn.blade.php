@@ -1,0 +1,12 @@
+<button
+class="
+bg-sred
+text-white
+border-0
+px-5
+py-2
+mt-5
+rounded-xl
+hover:bg-red-500
+"
+type="submit">Отправить</button>

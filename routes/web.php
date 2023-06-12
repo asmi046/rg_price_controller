@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,15 @@ use App\Http\Controllers\IndexController;
 */
 
 
-Route::get('/', [IndexController::class, 'index'])->name('index');
+
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', [IndexController::class, 'index'])->name('home');
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'show_login_page'])->name('login');
+    Route::post('/login_do', [AuthController::class, "login"])->name("login_do");
+});
