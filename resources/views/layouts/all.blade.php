@@ -31,6 +31,7 @@
         @vite([
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'public/fonts/icons/style.css',
         ])
 
 </head>

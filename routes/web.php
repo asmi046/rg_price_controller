@@ -23,9 +23,12 @@ use App\Http\Controllers\Auth\AuthController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('home');
+    Route::get('/logout', [AuthController::class, "logout"])->name("logout");
 });
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'show_login_page'])->name('login');
     Route::post('/login_do', [AuthController::class, "login"])->name("login_do");
+
+
 });
