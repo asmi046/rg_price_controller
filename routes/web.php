@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ParserController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('guest')->group(function () {
+    Route::get('/test_parse', [ParserController::class, 'index'])->name('test_parse');
+
     Route::get('/login', [AuthController::class, 'show_login_page'])->name('login');
     Route::post('/login_do', [AuthController::class, "login"])->name("login_do");
 
