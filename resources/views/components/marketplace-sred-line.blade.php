@@ -1,5 +1,5 @@
 <tr>
-    <x-td bold bg>диаметр: 50 мм</x-td>
+    <x-td bold bg>диаметр: {{$width}} мм</x-td>
 
     @php
             $total_summ = 0;
