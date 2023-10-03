@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+        backgroundImage: {
+            'arrow-bg': "url('../../public/img/arrow.svg')",
+
+        },
         colors: {
             bgcolor:'#f4f4f4',
             sred:'#E30613'
