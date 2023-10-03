@@ -193,6 +193,16 @@
             </x-table>
         </div>
 
+        <h2 class="text-3xl font-bold  mb-3" >Расчетные рекомендуемые розничные цены, руб / ед [с НДС]</h2>
+
+        <form action="">
+            <select class="h-8 outline-none px-3 border border-gray-400 rounded-sm" name="form" id="">
+                <option value="Ценовое лидерство">Ценовое лидерство</option>
+                <option value="Установелние медианных цен">Установелние медианных цен</option>
+                <option value="Следование за конкурентом">Следование за конкурентом</option>
+            </select>
+        </form>
+
     </div>
 </section>
 
