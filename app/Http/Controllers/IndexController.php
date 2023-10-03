@@ -9,9 +9,11 @@ use App\Models\GettingPrice;
 use App\Models\Load;
 use App\Models\ProductInformation;
 
+use App\Actions\GetAnalogTableAction;
+
 class IndexController extends Controller
 {
-    public function index() {
+    public function index( GetAnalogTableAction $analogTable) {
 
         if (!Auth::check()) {
             return redirect(route('login'));
@@ -20,22 +22,11 @@ class IndexController extends Controller
         $load_index = Load::select()->orderBy("id", 'desc')->first();
         $load_index = $load_index->id;
 
-        $IRRIGATION = ProductInformation::with('tovar_price')->where('analog_rg', "IRRIGATION")->get();
+        $IRRIGATION_param = $analogTable->handle("IRRIGATION");
+        $CLEAN_NORD_param = $analogTable->handle("CLEAN NORD");
+        $TRANS_FOOD_param = $analogTable->handle("TRANS FOOD");
 
-        $marcetplaces = [];
-        $sizes = [];
-        $brands = [];
-        $price_list = [];
+        return view('index', ['IRRIGATION' => $IRRIGATION_param, "CLEAN_NORD" => $CLEAN_NORD_param, "TRANS_FOOD" => $TRANS_FOOD_param]);
 
-        foreach ($IRRIGATION as $elem) {
-            $marcetplaces[$elem->marketplace] = $elem->marketplace;
-            $sizes[$elem->diametr] = $elem->diametr;
-            $brands[$elem->manufacture] = $elem->manufacture;
-            $price_list[$elem->manufacture][$elem->diametr][$elem->marketplace] = $elem->tovar_price()->orderBy("load_id", 'desc')->first()->one_price_value;
-        }
-
-        // dd($load_index, $marcetplaces, $sizes, $brands, $price_list);
-
-        return view('index', ['marcetplaces' => $marcetplaces, 'price_list' => $price_list]);
     }
 }

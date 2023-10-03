@@ -23,7 +23,7 @@
                     <tr>
                         <x-th>Бренд</x-th>
 
-                        @foreach ($marcetplaces as $item)
+                        @foreach ($IRRIGATION['marcetplaces'] as $item)
                             <x-th>{{$item}}</x-th>
                         @endforeach
 
@@ -32,14 +32,14 @@
                 </thead>
 
                 <tbody>
-                    <x-marketplace-sred-line :pricelist="$price_list" :marcetplaces="$marcetplaces" :width="50"></x-marketplace-sred-line>
-                    <x-brand-line :pricelist="$price_list" :marcetplaces="$marcetplaces" :width="50"></x-brand-line>
+                    <x-marketplace-sred-line :pricelist="$IRRIGATION['price_list']" :marcetplaces="$IRRIGATION['marcetplaces']" :width="50"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$IRRIGATION['price_list']" :marcetplaces="$IRRIGATION['marcetplaces']" :width="50"></x-brand-line>
 
-                    <x-marketplace-sred-line :pricelist="$price_list" :marcetplaces="$marcetplaces" :width="75"></x-marketplace-sred-line>
-                    <x-brand-line :pricelist="$price_list" :marcetplaces="$marcetplaces" :width="75"></x-brand-line>
+                    <x-marketplace-sred-line :pricelist="$IRRIGATION['price_list']" :marcetplaces="$IRRIGATION['marcetplaces']" :width="75"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$IRRIGATION['price_list']" :marcetplaces="$IRRIGATION['marcetplaces']" :width="75"></x-brand-line>
 
-                    <x-marketplace-sred-line :pricelist="$price_list" :marcetplaces="$marcetplaces" :width="100"></x-marketplace-sred-line>
-                    <x-brand-line :pricelist="$price_list" :marcetplaces="$marcetplaces" :width="100"></x-brand-line>
+                    <x-marketplace-sred-line :pricelist="$IRRIGATION['price_list']" :marcetplaces="$IRRIGATION['marcetplaces']" :width="100"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$IRRIGATION['price_list']" :marcetplaces="$IRRIGATION['marcetplaces']" :width="100"></x-brand-line>
 
                 </tbody>
             </x-table>
@@ -52,68 +52,24 @@
                 <thead>
                     <tr>
                         <x-th>Бренд</x-th>
-                        <x-th>ВсеИнструменты.Ру</x-th>
-                        <x-th>МПТ-Пластик</x-th>
-                        <x-th>ОЗОН</x-th>
-                        <x-th>ЯндексМаркет</x-th>
+
+                        @foreach ($CLEAN_NORD['marcetplaces'] as $item)
+                            <x-th>{{$item}}</x-th>
+                        @endforeach
+
                         <x-th>Среднее</x-th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <x-td bold bg>диаметр: 50 мм</x-td>
-                        <x-td bold bg>100</x-td>
-                        <x-td bold bg>200</x-td>
-                        <x-td bold bg>300</x-td>
-                        <x-td bold bg>400</x-td>
-                        <x-td bold bg>500</x-td>
-                    </tr>
+                    <x-marketplace-sred-line :pricelist="$CLEAN_NORD['price_list']" :marcetplaces="$CLEAN_NORD['marcetplaces']" :width="50"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$CLEAN_NORD['price_list']" :marcetplaces="$CLEAN_NORD['marcetplaces']" :width="50"></x-brand-line>
 
-                    <tr>
-                        <x-td>OASE</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
+                    <x-marketplace-sred-line :pricelist="$CLEAN_NORD['price_list']" :marcetplaces="$CLEAN_NORD['marcetplaces']" :width="75"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$CLEAN_NORD['price_list']" :marcetplaces="$CLEAN_NORD['marcetplaces']" :width="75"></x-brand-line>
 
-                    <tr>
-                        <x-td>Pondtech</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
-
-                    <tr>
-                        <x-td bold bg>диаметр: 75 мм</x-td>
-                        <x-td bold bg>100</x-td>
-                        <x-td bold bg>200</x-td>
-                        <x-td bold bg>300</x-td>
-                        <x-td bold bg>400</x-td>
-                        <x-td bold bg>500</x-td>
-                    </tr>
-
-                    <tr>
-                        <x-td>OASE</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
-
-                    <tr>
-                        <x-td>Pondtech</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
+                    <x-marketplace-sred-line :pricelist="$CLEAN_NORD['price_list']" :marcetplaces="$CLEAN_NORD['marcetplaces']" :width="100"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$CLEAN_NORD['price_list']" :marcetplaces="$CLEAN_NORD['marcetplaces']" :width="100"></x-brand-line>
 
                 </tbody>
             </x-table>
@@ -126,68 +82,24 @@
                 <thead>
                     <tr>
                         <x-th>Бренд</x-th>
-                        <x-th>ВсеИнструменты.Ру</x-th>
-                        <x-th>МПТ-Пластик</x-th>
-                        <x-th>ОЗОН</x-th>
-                        <x-th>ЯндексМаркет</x-th>
+
+                        @foreach ($TRANS_FOOD['marcetplaces'] as $item)
+                            <x-th>{{$item}}</x-th>
+                        @endforeach
+
                         <x-th>Среднее</x-th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <x-td bold bg>диаметр: 50 мм</x-td>
-                        <x-td bold bg>100</x-td>
-                        <x-td bold bg>200</x-td>
-                        <x-td bold bg>300</x-td>
-                        <x-td bold bg>400</x-td>
-                        <x-td bold bg>500</x-td>
-                    </tr>
+                    <x-marketplace-sred-line :pricelist="$TRANS_FOOD['price_list']" :marcetplaces="$TRANS_FOOD['marcetplaces']" :width="50"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$TRANS_FOOD['price_list']" :marcetplaces="$TRANS_FOOD['marcetplaces']" :width="50"></x-brand-line>
 
-                    <tr>
-                        <x-td>OASE</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
+                    <x-marketplace-sred-line :pricelist="$TRANS_FOOD['price_list']" :marcetplaces="$TRANS_FOOD['marcetplaces']" :width="75"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$TRANS_FOOD['price_list']" :marcetplaces="$TRANS_FOOD['marcetplaces']" :width="75"></x-brand-line>
 
-                    <tr>
-                        <x-td>Pondtech</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
-
-                    <tr>
-                        <x-td bold bg>диаметр: 75 мм</x-td>
-                        <x-td bold bg>100</x-td>
-                        <x-td bold bg>200</x-td>
-                        <x-td bold bg>300</x-td>
-                        <x-td bold bg>400</x-td>
-                        <x-td bold bg>500</x-td>
-                    </tr>
-
-                    <tr>
-                        <x-td>OASE</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
-
-                    <tr>
-                        <x-td>Pondtech</x-td>
-                        <x-td>1</x-td>
-                        <x-td>2</x-td>
-                        <x-td>3</x-td>
-                        <x-td>4</x-td>
-                        <x-td>5</x-td>
-                    </tr>
+                    <x-marketplace-sred-line :pricelist="$TRANS_FOOD['price_list']" :marcetplaces="$TRANS_FOOD['marcetplaces']" :width="100"></x-marketplace-sred-line>
+                    <x-brand-line :pricelist="$TRANS_FOOD['price_list']" :marcetplaces="$TRANS_FOOD['marcetplaces']" :width="100"></x-brand-line>
 
                 </tbody>
             </x-table>
