@@ -108,7 +108,9 @@
         <h2 class="text-3xl font-bold  mb-3" >Расчетные рекомендуемые розничные цены, руб / ед [с НДС]</h2>
 
         <x-tap-container name="Ценовое лидерство">
-            <x-leader-table></x-leader-table>
+            <x-leader-table>
+                <x-leader-table-analog-line>IRRIGATION</x-leader-table-analog-line>
+            </x-leader-table>
         </x-tap-container>
 
         <x-tap-container name="Установелние медианных цен">

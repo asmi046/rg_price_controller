@@ -10,10 +10,11 @@ use App\Models\Load;
 use App\Models\ProductInformation;
 
 use App\Actions\GetAnalogTableAction;
+use App\Services\CalcService;
 
 class IndexController extends Controller
 {
-    public function index( GetAnalogTableAction $analogTable) {
+    public function index( GetAnalogTableAction $analogTable, CalcService $calc) {
 
         if (!Auth::check()) {
             return redirect(route('login'));
@@ -25,6 +26,10 @@ class IndexController extends Controller
         $IRRIGATION_param = $analogTable->handle("IRRIGATION");
         $CLEAN_NORD_param = $analogTable->handle("CLEAN NORD");
         $TRANS_FOOD_param = $analogTable->handle("TRANS FOOD");
+
+        $lider_param = $calc->calc_min_line("IRRIGATION", 50);
+
+        dd($lider_param, $IRRIGATION_param);
 
         return view('index', ['IRRIGATION' => $IRRIGATION_param, "CLEAN_NORD" => $CLEAN_NORD_param, "TRANS_FOOD" => $TRANS_FOOD_param]);
 

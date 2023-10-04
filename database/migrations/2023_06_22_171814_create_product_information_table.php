@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string("color", 100)->comment('Цвет');
             $table->string("sfera", 100)->comment('Применяемость');
             $table->string("analog_rg", 100)->comment('Аналог RubEX');
-            $table->string("code_1c_rg", 50)->comment('Код 1С RubEX');
-            $table->float("VC plan")->comment('VC план');
             $table->integer("width")->comment('Длина, м');
             $table->integer("diametr")->comment('Диаметр, мм');
             $table->string("link", 2000)->comment('Ссылка на товар');
