@@ -27,11 +27,19 @@ class IndexController extends Controller
         $CLEAN_NORD_param = $analogTable->handle("CLEAN NORD");
         $TRANS_FOOD_param = $analogTable->handle("TRANS FOOD");
 
-        $lider_param = $calc->calc_min_line("IRRIGATION", 50);
+        $price_leader = $calc->price_leader_get(5);
+        $price_median = $calc->price_median_get();
 
-        dd($lider_param, $IRRIGATION_param);
 
-        return view('index', ['IRRIGATION' => $IRRIGATION_param, "CLEAN_NORD" => $CLEAN_NORD_param, "TRANS_FOOD" => $TRANS_FOOD_param]);
+
+
+        return view('index', [
+            'IRRIGATION' => $IRRIGATION_param,
+            "CLEAN_NORD" => $CLEAN_NORD_param,
+            "TRANS_FOOD" => $TRANS_FOOD_param,
+            "price_leader" => $price_leader,
+            "price_median" => $price_median
+        ]);
 
     }
 }

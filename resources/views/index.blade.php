@@ -110,11 +110,27 @@
         <x-tap-container name="Ценовое лидерство">
             <x-leader-table>
                 <x-leader-table-analog-line>IRRIGATION</x-leader-table-analog-line>
+                <x-leader-table-size-lines :sizes="$price_leader['IRRIGATION']" ></x-leader-table-size-lines>
+
+                <x-leader-table-analog-line>CLEAN NORD</x-leader-table-analog-line>
+                <x-leader-table-size-lines :sizes="$price_leader['CLEAN NORD']" ></x-leader-table-size-lines>
+
+                <x-leader-table-analog-line>TRANS FOOD</x-leader-table-analog-line>
+                <x-leader-table-size-lines :sizes="$price_leader['TRANS FOOD']" ></x-leader-table-size-lines>
             </x-leader-table>
         </x-tap-container>
 
         <x-tap-container name="Установелние медианных цен">
-            <x-median-table></x-median-table>
+            <x-median-table>
+                    <x-leader-table-analog-line>IRRIGATION</x-leader-table-analog-line>
+                    <x-leader-table-size-lines :sizes="$price_median['IRRIGATION']" ></x-leader-table-size-lines>
+
+                    <x-leader-table-analog-line>CLEAN NORD</x-leader-table-analog-line>
+                    <x-leader-table-size-lines :sizes="$price_median['CLEAN NORD']" ></x-leader-table-size-lines>
+
+                    <x-leader-table-analog-line>TRANS FOOD</x-leader-table-analog-line>
+                    <x-leader-table-size-lines :sizes="$price_median['TRANS FOOD']" ></x-leader-table-size-lines>
+            </x-median-table>
         </x-tap-container>
 
         <x-tap-container name="Следование за конкурентом">
@@ -125,3 +141,4 @@
 </section>
 
 @endsection
+
